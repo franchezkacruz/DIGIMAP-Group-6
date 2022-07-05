@@ -29,13 +29,14 @@ def allowed_file(filename):
 # index route
 @app.route("/", methods=['GET'])
 def home():
+    flash(' ')
     return render_template('index.html')
 
 
 # route for accepting images
 @app.route('/', methods=['POST'])
 def upload_image():
-    
+    flash(' ')
     if 'file' not in request.files:
         flash('No file part')
         return redirect(request.url)
@@ -51,14 +52,16 @@ def upload_image():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
         #print('upload_image filename: ' + filename)
-        flash('Image successfully uploaded')
+        #flash('Image successfully uploaded')
         return render_template('new-index.html', filename=filename, base64=generate_images(filepath))
     else:
         flash('Allowed image types are - png, jpg, jpeg')
         return redirect(request.url)
- 
+    
 @app.route('/display/<filename>')
 def display_image(filename):
+    #session['_flashes'].clear()
+    flash('')
     #print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
