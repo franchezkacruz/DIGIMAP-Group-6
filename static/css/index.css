@@ -58,12 +58,14 @@ body{
 
 .sec1{
     background: url('/static/img/sec1.png');
-    height: 100vh;
-    width: 100vw;
+    background-color: var(--color-violet);
+    min-height: 100vh;
+    min-width: 100vw;
     color: white;
     font-family: 'Montserrat', sans-serif;
     align-items: flex-end;
     vertical-align: bottom;
+    background-color: var(--color-violet);
 }
 
 .sec1-content{
@@ -96,12 +98,15 @@ body{
 
 #learn-more{
     background: url('/static/img/sec3.png');
-    height: 100vh;
-    width: 100vw;
+    background-color: var(--color-violet);
+    min-height: 100vh;
+    min-width: 100vw;
     color: white;
     font-family: 'Montserrat', sans-serif;
     align-items: flex-end;
     vertical-align: bottom;
+    
+    
 }
 
 
@@ -112,17 +117,13 @@ body{
 label{
     background-color: var(--color-bg-gray);
     border: 3px dashed var(--color-violet);
-    height: 50vh;
+    height: fit-content;
     width: 100%;
     cursor: pointer;
     border-radius: 50px;
     vertical-align: auto;
     justify-content: center;
     align-items: center;
-}
-.label-content{
-    padding-top: 10vh;
-    padding-bottom: auto;
 }
 
 .sec3-title{
